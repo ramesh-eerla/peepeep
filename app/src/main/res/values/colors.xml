@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#53c0ef</color>
+    <color name="colorPrimaryDark">#1c76ad</color>
+    <color name="colorDark">#1c76ad</color>
+    <color name="colorAccent">#1c76ad</color>
+
+    <color name="red_color">#f15757</color>
+    <color name="gmail_red">#f16363</color>
+    <color name="facebook_color">#3496ca</color>
+    <color name="edit_text_select">#1f7ab1</color>
+
+
+
+
+
+
+
+
+
+
+    <color name="item_text_color">#617A9F</color>
+
+    <color name="dark_blue">#1c76ad</color>
+
+
+
+    <color name="white">#ffffff</color>
+    <color name="buttons">#5472d3</color>
+    <color name="rooms">#0286F9</color>
+    <color name="hostel">#F8AA00</color>
+    <color name="paygust">#F601BF</color>
+    <color name="inputtextcolor">#1ba1e2</color>
+    <color name="loginbuttoncolor">#00B400</color>
+    <color name="transparent">#00000000</color>
+    <color name="card_viewcolor">#0288d1</color>
+    <!--<color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>-->
+    <color name="diffcolor">#FF4081</color>
+
+    <color name="action_title_color">#0288d1</color>
+    <color name="view_line_color">#30000000</color>
+    <!-- Screens background color-->
+    <color name="bg_screen1">#f64c73</color>
+    <color name="bg_screen2">#20d2bb</color>
+    <color name="bg_screen3">#3395ff</color>
+    <color name="bg_screen4">#c873f4</color>
+
+
+
+
+
+
+
+</resources>
