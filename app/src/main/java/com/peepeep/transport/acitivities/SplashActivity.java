@@ -28,7 +28,8 @@ import butterknife.BindView;
 
 public class SplashActivity extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 3000;
-@BindView(R.id.splash_logo) ImageView logo;
+    @BindView(R.id.splash_logo)
+    ImageView logo;
     private PrefManager prefManager;
 
     @Override
@@ -56,10 +57,10 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 try {
                     // Thread will sleep for 5 seconds
-                    sleep(5*1000);
+                    sleep(5 * 1000);
 
                     // After 5 seconds redirect to another intent
-                    Intent i=new Intent(getBaseContext(),MainActivity.class);
+                    Intent i = new Intent(getBaseContext(), MainActivity.class);
                     startActivity(i);
 
                     //Remove activity
@@ -75,7 +76,6 @@ public class SplashActivity extends AppCompatActivity {
     }
 
 
-
     private void launchHomeScreen() {
         prefManager.setFirstTimeLaunch(true);
         startActivity(new Intent(SplashActivity.this, MainActivity.class));
@@ -84,7 +84,8 @@ public class SplashActivity extends AppCompatActivity {
 
 
     /**
-     * Making notification bar transparent*/
+     * Making notification bar transparent
+     */
 
     private void changeStatusBarColor() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

@@ -19,12 +19,18 @@ import butterknife.ButterKnife;
 
 public class ResetPasswordActivity extends AppCompatActivity {
 
-    @BindView(R.id.toolbar) Toolbar mToolbar;
-    @BindView(R.id.reg_email) EditText mResetpwd;
-    @BindView(R.id.reset) AppCompatButton mReset;
-    @BindView(R.id.rest_pwd_layout) LinearLayout mReset_pwd_layout;
-    @BindView(R.id.digi_layout) LinearLayout mDigi_layout;
-    int i=0;
+    @BindView(R.id.toolbar)
+    Toolbar mToolbar;
+    @BindView(R.id.reg_email)
+    EditText mResetpwd;
+    @BindView(R.id.reset)
+    AppCompatButton mReset;
+    @BindView(R.id.rest_pwd_layout)
+    LinearLayout mReset_pwd_layout;
+    @BindView(R.id.digi_layout)
+    LinearLayout mDigi_layout;
+    int i = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,15 +44,15 @@ public class ResetPasswordActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mResetpwd.setVisibility(View.GONE);
-                if(i==0){
-                mReset_pwd_layout.setVisibility(View.VISIBLE);
+                if (i == 0) {
+                    mReset_pwd_layout.setVisibility(View.VISIBLE);
                     mDigi_layout.setVisibility(View.GONE);
 
-                i=1;
-                }else{
+                    i = 1;
+                } else {
                     mDigi_layout.setVisibility(View.VISIBLE);
                     mReset_pwd_layout.setVisibility(View.GONE);
-                    i=0;
+                    i = 0;
                 }
 
             }
@@ -54,7 +60,8 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
 
     }
-    public boolean onOptionsItemSelected(MenuItem item){
+
+    public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();

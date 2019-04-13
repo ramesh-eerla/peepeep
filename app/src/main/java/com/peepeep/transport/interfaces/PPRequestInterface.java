@@ -1,7 +1,6 @@
 package com.peepeep.transport.interfaces;
 
 
-
 import java.util.List;
 import java.util.Map;
 
@@ -81,4 +80,5 @@ public interface PPRequestInterface {
 
     @GET("distancematrix/json") // origins/destinations:  LatLng as string
     Call<ResultDistanceMatrix> getDistance(@Query("key") String key, @Query("origins") String origins, @Query("destinations") String destinations);
-*/}
+*/
+}

@@ -1,36 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:facebook="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:layout_editor_absoluteY="25dp">
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ProgressBar
-        android:id="@+id/login_progress"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/login_progress"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.45"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.45" />
 
 
         <LinearLayout
@@ -50,150 +47,158 @@
                 android:id="@+id/user_edit"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dim_50"
-                android:paddingLeft="@dimen/dim_10"
                 android:layout_marginLeft="@dimen/dim_5"
-                android:fontFamily="@font/califi"
                 android:background="@drawable/selet_edittext"
-                android:drawablePadding="@dimen/dim_15"
                 android:drawableStart="@drawable/ic_profile_round"
-                android:textColorHint="@android:color/darker_gray"
-                android:inputType="text"
+                android:drawablePadding="@dimen/dim_15"
+                android:fontFamily="@font/califi"
                 android:hint="User Name"
-                android:textCursorDrawable="@null"
+                android:inputType="text"
+                android:paddingLeft="@dimen/dim_10"
                 android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:textCursorDrawable="@null"
                 android:textSize="@dimen/screen_title" />
 
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dim_50"
-                    android:layout_marginLeft="@dimen/dim_5"
-                    android:layout_marginTop="@dimen/dim_7"
-                    android:inputType="phone"
-                    android:textSize="@dimen/screen_title"
-                    android:textColor="@android:color/black"
-                    android:fontFamily="@font/califi"
-                    android:textCursorDrawable="@null"
-                    android:paddingLeft="@dimen/dim_10"
-                    android:background="@drawable/selet_edittext"
-                    android:drawablePadding="@dimen/dim_15"
-                    android:drawableStart="@drawable/ic_num_phone"
-                    android:hint="Phone Number"
-                    android:textColorHint="@android:color/darker_gray"
-                    android:id="@+id/phone_edit"/>
+            <EditText
+                android:id="@+id/phone_edit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_50"
+                android:layout_marginLeft="@dimen/dim_5"
+                android:layout_marginTop="@dimen/dim_7"
+                android:background="@drawable/selet_edittext"
+                android:drawableStart="@drawable/ic_num_phone"
+                android:drawablePadding="@dimen/dim_15"
+                android:fontFamily="@font/califi"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:paddingLeft="@dimen/dim_10"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/screen_title" />
 
 
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dim_50"
-                    android:layout_marginLeft="@dimen/dim_5"
-                    android:inputType="textEmailAddress"
-                    android:textSize="@dimen/screen_title"
-                    android:textColor="@android:color/black"
-                    android:fontFamily="@font/califi"
-                    android:textCursorDrawable="@null"
-                    android:layout_marginTop="@dimen/dim_7"
-                    android:paddingLeft="@dimen/dim_10"
-                    android:background="@drawable/selet_edittext"
-                    android:drawablePadding="@dimen/dim_15"
-                    android:drawableStart="@drawable/ic_email"
-                    android:hint="Email"
-                    android:textColorHint="@android:color/darker_gray"
-                    android:id="@+id/email_edit"/>
-
-
-                <EditText
-                    android:id="@+id/pwd_edit"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dim_50"
-                    android:layout_marginLeft="@dimen/dim_5"
-                    android:fontFamily="@font/califi"
-                    android:hint="@string/prompt_password"
-                    android:textColorHint="@android:color/darker_gray"
-                    android:inputType="textPassword"
-                    android:textCursorDrawable="@null"
-                    android:layout_marginTop="@dimen/dim_7"
-                    android:paddingLeft="@dimen/dim_10"
-                    android:background="@drawable/selet_edittext"
-                    android:drawablePadding="@dimen/dim_15"
-                    android:drawableStart="@drawable/ic_password"
-                    android:textColor="@android:color/black"
-                    android:textSize="@dimen/screen_title" />
+            <EditText
+                android:id="@+id/email_edit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_50"
+                android:layout_marginLeft="@dimen/dim_5"
+                android:layout_marginTop="@dimen/dim_7"
+                android:background="@drawable/selet_edittext"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="@dimen/dim_15"
+                android:fontFamily="@font/califi"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="@dimen/dim_10"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/screen_title" />
 
 
-                <EditText
-                    android:id="@+id/cnfpwd_edit"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dim_50"
-                    android:layout_marginLeft="@dimen/dim_5"
-                    android:fontFamily="@font/califi"
-                    android:hint="@string/confirm_password"
-                    android:textColorHint="@android:color/darker_gray"
-                    android:inputType="textPassword"
-                    android:textCursorDrawable="@null"
-                    android:layout_marginTop="@dimen/dim_7"
-                    android:paddingLeft="@dimen/dim_10"
-                    android:background="@drawable/selet_edittext"
-                    android:drawablePadding="@dimen/dim_15"
-                    android:drawableStart="@drawable/ic_password"
-                    android:textColor="@android:color/black"
-                    android:textSize="@dimen/screen_title" />
+            <EditText
+                android:id="@+id/pwd_edit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_50"
+                android:layout_marginLeft="@dimen/dim_5"
+                android:layout_marginTop="@dimen/dim_7"
+                android:background="@drawable/selet_edittext"
+                android:drawableStart="@drawable/ic_password"
+                android:drawablePadding="@dimen/dim_15"
+                android:fontFamily="@font/califi"
+                android:hint="@string/prompt_password"
+                android:inputType="textPassword"
+                android:paddingLeft="@dimen/dim_10"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/screen_title" />
+
+
+            <EditText
+                android:id="@+id/cnfpwd_edit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_50"
+                android:layout_marginLeft="@dimen/dim_5"
+                android:layout_marginTop="@dimen/dim_7"
+                android:background="@drawable/selet_edittext"
+                android:drawableStart="@drawable/ic_password"
+                android:drawablePadding="@dimen/dim_15"
+                android:fontFamily="@font/califi"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword"
+                android:paddingLeft="@dimen/dim_10"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/screen_title" />
+
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="@dimen/dim_6"
 
-                android:layout_height="wrap_content">
+                android:padding="@dimen/dim_6">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/califi"
-                    android:textSize="@dimen/screen_title"
-                    android:text="@string/forbussiness"/>
+                    android:text="@string/forbussiness"
+                    android:textSize="@dimen/screen_title" />
+
                 <ToggleButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
                     android:background="@drawable/ic_toggile"
+                    android:gravity="center"
                     android:textOff=""
-                    android:textOn=""
-                  />
+                    android:textOn="" />
             </LinearLayout>
 
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_height="wrap_content">
+                android:orientation="horizontal">
+
                 <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/termscheckbox"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/dim_60"
                     android:layout_gravity="center"
-                    android:text="@string/acceptterms"/>
+                    android:text="@string/acceptterms" />
+
+                <TextView
+                    android:id="@+id/checkboxtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dim_5"
+                    android:text="@string/terms" />
             </LinearLayout>
+
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/email_sign_in_button"
+                android:id="@+id/register_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dim_10"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white"
                 android:background="@drawable/topgradient"
                 android:fontFamily="@font/califi"
-                android:textSize="@dimen/action_titile"
                 android:text="@string/register"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/action_titile"
 
                 android:textStyle="bold" />
-
-
 
 
         </LinearLayout>
 
 
-
-
-</LinearLayout>
+    </LinearLayout>
 </ScrollView>
-</android.support.constraint.ConstraintLayout>

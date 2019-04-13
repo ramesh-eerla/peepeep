@@ -74,24 +74,30 @@ public class LoginFragment extends Fragment implements ResponceCallback {
             "foo@example.com:hello", "bar@example.com:world"
     };
     CallbackManager callbackManager;
-    private String TAG="LoginActivity";
+    private String TAG = "LoginActivity";
     // UI references.
-    @BindView(R.id.email_edit) EditText mEmailView;
-    @BindView(R.id.pwd_edit) EditText mPasswordView;
-    @BindView(R.id.forgotpwd) TextView  forgotpwd;
-    @BindView(R.id.email_sign_in_button) Button mEmailSignInButton;
-    @BindView(R.id.fblogin) AppCompatButton fblogin;
-    @BindView(R.id.gmaillogin) AppCompatButton gmaillogin;
+    @BindView(R.id.email_edit)
+    EditText mEmailView;
+    @BindView(R.id.pwd_edit)
+    EditText mPasswordView;
+    @BindView(R.id.forgotpwd)
+    TextView forgotpwd;
+    @BindView(R.id.email_sign_in_button)
+    Button mEmailSignInButton;
+    @BindView(R.id.fblogin)
+    AppCompatButton fblogin;
+    @BindView(R.id.gmaillogin)
+    AppCompatButton gmaillogin;
 
 
     private ProgressDialog mProgressView;
     private View mLoginFormView;
     private Context mContext;
     private GoogleSignInClient mGoogleSignInClient;
-    private int RC_SIGN_IN=111;
+    private int RC_SIGN_IN = 111;
     private PP_RetrofitSevicecall mRt_retrofitSevicecall;
     int PERMISSION_ALL = 1;
-    String[] PERMISSIONS = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA, Manifest.permission.GET_ACCOUNTS,Manifest.permission.READ_CONTACTS};
+    String[] PERMISSIONS = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA, Manifest.permission.GET_ACCOUNTS, Manifest.permission.READ_CONTACTS};
 
     public static boolean hasPermissions(Context mContext, String... permissions) {
         if (mContext != null && permissions != null) {
@@ -104,6 +110,10 @@ public class LoginFragment extends Fragment implements ResponceCallback {
         return true;
     }
 
+    public LoginFragment() {
+        // Required empty public constructor
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,8 +122,8 @@ public class LoginFragment extends Fragment implements ResponceCallback {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.login_fragment, container, false);
-        ButterKnife.bind(this,view);
+        View view = inflater.inflate(R.layout.login_fragment, container, false);
+        ButterKnife.bind(this, view);
         // Inflate the layout for this fragment
         callbackManager = CallbackManager.Factory.create();
         if (!hasPermissions(getActivity(), PERMISSIONS)) {
@@ -124,10 +134,10 @@ public class LoginFragment extends Fragment implements ResponceCallback {
                 .requestIdToken(Constants.GmailOauthid)
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
-        mRt_retrofitSevicecall=new PP_RetrofitSevicecall(mContext);
+        mRt_retrofitSevicecall = new PP_RetrofitSevicecall(mContext);
         AccessToken accessToken = AccessToken.getCurrentAccessToken();
         boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
-        if(isLoggedIn){
+        if (isLoggedIn) {
             afterloginnavigation();
         }
         // mCommonHelper=new CommonHelper();
@@ -146,9 +156,9 @@ public class LoginFragment extends Fragment implements ResponceCallback {
                 return false;
             }
         });
-mEmailSignInButton.setBackground(CommonHelper.getGradientDrawable(getResources().getColor(R.color.colorDark),getResources().getColor(R.color.colorDark),35));
-        gmaillogin.setBackground(CommonHelper.getGradientDrawable(getResources().getColor(R.color.white),getResources().getColor(R.color.gmail_red),25));
-        fblogin.setBackground(CommonHelper.getGradientDrawable(getResources().getColor(R.color.white),getResources().getColor(R.color.facebook_color),25));
+        mEmailSignInButton.setBackground(CommonHelper.getGradientDrawable(getResources().getColor(R.color.colorDark), getResources().getColor(R.color.colorDark), 35));
+        gmaillogin.setBackground(CommonHelper.getGradientDrawable(getResources().getColor(R.color.white), getResources().getColor(R.color.gmail_red), 25));
+        fblogin.setBackground(CommonHelper.getGradientDrawable(getResources().getColor(R.color.white), getResources().getColor(R.color.facebook_color), 25));
 
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -156,19 +166,18 @@ mEmailSignInButton.setBackground(CommonHelper.getGradientDrawable(getResources()
                 attemptLogin();
             }
         });
-        fblogin.setOnClickListener(facebooklogin );
+        fblogin.setOnClickListener(facebooklogin);
         gmaillogin.setOnClickListener(gmailogin);
 
         forgotpwd.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                CommonUtils.forget_anv=Constants.PP_FORGETPWD;
-                 startActivity(new Intent(getActivity(), ResetPasswordActivity.class));
+                CommonUtils.forget_anv = Constants.PP_FORGETPWD;
+                startActivity(new Intent(getActivity(), ResetPasswordActivity.class));
             }
         });
         return view;
     }
-
 
 
     /**
@@ -221,7 +230,7 @@ mEmailSignInButton.setBackground(CommonHelper.getGradientDrawable(getResources()
 
     }
 
-    OnClickListener gmailogin= new OnClickListener() {
+    OnClickListener gmailogin = new OnClickListener() {
         @Override
         public void onClick(View v) {
             Intent signInIntent = mGoogleSignInClient.getSignInIntent();
@@ -230,19 +239,20 @@ mEmailSignInButton.setBackground(CommonHelper.getGradientDrawable(getResources()
         }
     };
 
-public void afterloginnavigation(){
+    public void afterloginnavigation() {
     /*Intent intent = new Intent(LoginActivity.this,
             LandigpageActivity.class);
     intent.putExtra("userProfile", json_object.toString());
     startActivity(intent);*/
-    //startActivity(new Intent(LoginActivity.this,LandigpageActivity.class));
-}
-    OnClickListener facebooklogin=new OnClickListener() {
+        //startActivity(new Intent(LoginActivity.this,LandigpageActivity.class));
+    }
+
+    OnClickListener facebooklogin = new OnClickListener() {
         @Override
         public void onClick(View v) {
             AccessToken accessToken = AccessToken.getCurrentAccessToken();
             boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
-            LoginManager.getInstance().logInWithReadPermissions(getActivity(), Arrays.asList("email","public_profile"));
+            LoginManager.getInstance().logInWithReadPermissions(getActivity(), Arrays.asList("email", "public_profile"));
         /*LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
         loginButton.setReadPermissions("email");*/
             LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
@@ -262,7 +272,8 @@ public void afterloginnavigation(){
                 }
             });
         }
-    } ;
+    };
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -271,8 +282,8 @@ public void afterloginnavigation(){
             // a listener.
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             handleSignInResult(task);
-        }else{
-            callbackManager.onActivityResult(requestCode, resultCode, data); 
+        } else {
+            callbackManager.onActivityResult(requestCode, resultCode, data);
         }
     }
 
@@ -318,7 +329,7 @@ public void afterloginnavigation(){
                 });
         Bundle permission_param = new Bundle();
         permission_param.putString("fields", "id,name,email,picture.width(120).height(120)");
-                data_request.setParameters(permission_param);
+        data_request.setParameters(permission_param);
         data_request.executeAsync();
 
     }

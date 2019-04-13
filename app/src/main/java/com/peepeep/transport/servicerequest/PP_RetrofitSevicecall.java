@@ -29,20 +29,22 @@ import retrofit2.Response;
 public class PP_RetrofitSevicecall {
     public Context mContext;
     public Call<Object> mService;
-   /* public Call<LoginDataset> mService_delete;
-    public Call<RetrofitResponse> mService_submit;*/
+    /* public Call<LoginDataset> mService_delete;
+     public Call<RetrofitResponse> mService_submit;*/
     ProgressDialog mProgressDialog;
     CommonHelper mCommonHelper;
     ResponceCallback mResponceCallback;
+
     public PP_RetrofitSevicecall(Context mContext) {
-        this.mContext=mContext;
-        this.mResponceCallback=(ResponceCallback)mContext;
-        this.mCommonHelper=new CommonHelper();
+        this.mContext = mContext;
+        this.mResponceCallback = (ResponceCallback) mContext;
+        this.mCommonHelper = new CommonHelper();
     }
+
     public PP_RetrofitSevicecall(Context mContext, Object mObject) {
-        this.mContext=mContext;
-        this.mResponceCallback=(ResponceCallback)mObject;
-        this.mCommonHelper=new CommonHelper();
+        this.mContext = mContext;
+        this.mResponceCallback = (ResponceCallback) mObject;
+        this.mCommonHelper = new CommonHelper();
     }
 
     /*public void loginpost(final int requestType, Object mUploadResumeFile) {

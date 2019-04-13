@@ -19,6 +19,7 @@ import java.util.regex.Pattern;
 public class CommonHelper {
     private ProgressDialog dialog = null;
     public static AlertDialog alertDialog = null;
+
     /**
      * This is to show error alert dialog for corresponding context
      *
@@ -66,15 +67,15 @@ public class CommonHelper {
         alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
 
-                   dialog.dismiss();
-                    }
+                dialog.dismiss();
+            }
         });
 
-            alertDialog.setButton2("Cancel", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                }
-            });
+        alertDialog.setButton2("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
 
         if (!((Activity) context).isFinishing())
             alertDialog.show();
@@ -82,17 +83,19 @@ public class CommonHelper {
 
         return alertDialog;
     }
-    public static String convertStringtoDate(String data){
-        SimpleDateFormat formatter6=new SimpleDateFormat("yyyy-MM-yyyy");
-        Date date= null;
+
+    public static String convertStringtoDate(String data) {
+        SimpleDateFormat formatter6 = new SimpleDateFormat("yyyy-MM-yyyy");
+        Date date = null;
         try {
             date = formatter6.parse(data);
         } catch (ParseException e) {
             e.printStackTrace();
             return "";
         }
-        return ""+date;
+        return "" + date;
     }
+
     /*
      * @Author :: Ramesh eerla
      * Use : creating the new reference if different text or null dialog
@@ -105,6 +108,7 @@ public class CommonHelper {
         }
         return null;
     }
+
     /*
      * @Author :: Ramesh Eerla
      * Use : Create the Alertdialog reference
@@ -115,7 +119,7 @@ public class CommonHelper {
         return alertDialog;
     }
 
-    public static GradientDrawable getGradientDrawable(int solidcolor,int expected_color,int cornerradius){
+    public static GradientDrawable getGradientDrawable(int solidcolor, int expected_color, int cornerradius) {
         // Initialize a new GradientDrawable
         GradientDrawable gd = new GradientDrawable();
 
@@ -134,7 +138,7 @@ public class CommonHelper {
 
         // Set GradientDrawable width and in pixels
         gd.setSize(450, 150); // Width 450 pixels and height 150 pixels
-return gd;
+        return gd;
 
     }
 }

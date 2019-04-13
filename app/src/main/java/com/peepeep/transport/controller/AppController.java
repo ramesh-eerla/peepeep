@@ -38,7 +38,6 @@ public class AppController extends Application {
     public static final String TAG = AppController.class.getSimpleName();
 
 
-
     private static AppController mInstance;
     private final int MAX_ATTEMPTS = 5;
     private final int BACKOFF_MILLI_SECONDS = 2000;
@@ -111,7 +110,6 @@ public class AppController extends Application {
     }
 
 
-
     public static PPRequestInterface getInterfaceService(Context mContext) {
 
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
@@ -121,27 +119,27 @@ public class AppController extends Application {
         OkHttpClient okHttpClient = null;
 
 
-            okHttpClient = new OkHttpClient().newBuilder()
-                    .connectTimeout(60, TimeUnit.SECONDS)
-                    .readTimeout(60, TimeUnit.SECONDS)
-                    .writeTimeout(60, TimeUnit.SECONDS)
-                    .addInterceptor(new Interceptor() {
-                        @Override
-                        public okhttp3.Response intercept(Chain chain) throws IOException {
-                            return chain.proceed(chain.request()
-                                    .newBuilder()
-                                    .build());
-                        }
-                    })
-                    .addInterceptor(logging)
-                    .build();
+        okHttpClient = new OkHttpClient().newBuilder()
+                .connectTimeout(60, TimeUnit.SECONDS)
+                .readTimeout(60, TimeUnit.SECONDS)
+                .writeTimeout(60, TimeUnit.SECONDS)
+                .addInterceptor(new Interceptor() {
+                    @Override
+                    public okhttp3.Response intercept(Chain chain) throws IOException {
+                        return chain.proceed(chain.request()
+                                .newBuilder()
+                                .build());
+                    }
+                })
+                .addInterceptor(logging)
+                .build();
 
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(/*mContext.getResources().getString(
-                        R.string.base_URL)*/ " "+ "/")
+                        R.string.base_URL)*/ " " + "/")
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
@@ -149,10 +147,6 @@ public class AppController extends Application {
         final PPRequestInterface mInterfaceService = retrofit.create(PPRequestInterface.class);
         return mInterfaceService;
     }
-
-
-
-
 
 
 }

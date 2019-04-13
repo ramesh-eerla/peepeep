@@ -14,7 +14,6 @@
     tools:layout_editor_absoluteY="25dp">
 
 
-
     <ProgressBar
         android:id="@+id/login_progress"
         style="?android:attr/progressBarStyleLarge"
@@ -26,19 +25,19 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45"/>
+        app:layout_constraintVertical_bias="0.45" />
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dim_440"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.2">
-
 
 
         <LinearLayout
@@ -54,70 +53,66 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.00">
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dim_50"
-                    android:paddingLeft="@dimen/dim_10"
-                    android:layout_marginLeft="@dimen/dim_5"
-                    android:inputType="textEmailAddress"
-                    android:textSize="@dimen/screen_title"
-                    android:textColor="@android:color/black"
-                    android:fontFamily="@font/califi"
-                    android:textCursorDrawable="@null"
-                    android:drawablePadding="@dimen/dim_15"
-                    android:drawableStart="@drawable/ic_profile_round"
-                    android:hint="Email"
-                    android:textColorHint="@android:color/darker_gray"
-                    android:background="@drawable/selet_edittext"
-                    android:id="@+id/email_edit"/>
+            <EditText
+                android:id="@+id/email_edit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_50"
+                android:layout_marginLeft="@dimen/dim_5"
+                android:background="@drawable/selet_edittext"
+                android:drawableStart="@drawable/ic_profile_round"
+                android:drawablePadding="@dimen/dim_15"
+                android:fontFamily="@font/califi"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="@dimen/dim_10"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/screen_title" />
 
-                <EditText
-                    android:id="@+id/pwd_edit"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dim_50"
-                    android:layout_marginTop="@dimen/dim_10"
-                    android:paddingLeft="@dimen/dim_10"
-                    android:layout_marginLeft="@dimen/dim_5"
-                    android:fontFamily="@font/califi"
-                    android:background="@drawable/selet_edittext"
-                    android:drawablePadding="@dimen/dim_15"
-                    android:drawableStart="@drawable/ic_password"
-                    android:hint="@string/prompt_password"
-                    android:textColorHint="@android:color/darker_gray"
-                    android:inputType="textPassword"
-                    android:textCursorDrawable="@null"
-                    android:textColor="@android:color/black"
-                    android:textSize="@dimen/screen_title" />
+            <EditText
+                android:id="@+id/pwd_edit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_50"
+                android:layout_marginLeft="@dimen/dim_5"
+                android:layout_marginTop="@dimen/dim_10"
+                android:background="@drawable/selet_edittext"
+                android:drawableStart="@drawable/ic_password"
+                android:drawablePadding="@dimen/dim_15"
+                android:fontFamily="@font/califi"
+                android:hint="@string/prompt_password"
+                android:inputType="textPassword"
+                android:paddingLeft="@dimen/dim_10"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/screen_title" />
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/forgotpwd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/tab_title_size_one"
                 android:layout_gravity="left"
-                android:textColor="@color/red_color"
                 android:fontFamily="@font/califi"
-                android:textSize="@dimen/font_login"
+                android:padding="@dimen/tab_title_size_one"
                 android:text="@string/forgetpassword"
-                />
+                android:textColor="@color/red_color"
+                android:textSize="@dimen/font_login" />
 
             <android.support.v7.widget.AppCompatButton
                 android:id="@+id/email_sign_in_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:textColor="@android:color/white"
                 android:background="@drawable/topgradient"
                 android:fontFamily="@font/califi"
-                android:textSize="@dimen/action_titile"
                 android:text="@string/action_sign_in_short"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/action_titile"
                 android:textStyle="bold" />
 
 
         </LinearLayout>
-
-
-
 
 
         <android.support.v7.widget.AppCompatButton
@@ -126,9 +121,9 @@
             android:layout_height="@dimen/dim_45"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/shape_edittext"
-            android:visibility="visible"
             android:text="@string/facebook"
             android:textColor="@color/facebook_color"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -143,9 +138,9 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/shape_edittext"
             android:onClick="gmaillogin"
-            android:visibility="visible"
-            android:textColor="@color/gmail_red"
             android:text="@string/google"
+            android:textColor="@color/gmail_red"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.9"
             app:layout_constraintLeft_toLeftOf="parent"

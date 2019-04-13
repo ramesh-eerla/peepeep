@@ -35,7 +35,8 @@
 
     <string name="slide_4_title">Post/Call Your Requirement </string>
     <string name="slide_4_desc">You can easily post/Call your nearest for Transport </string>
-    <string name="acceptterms">I Accept <font fgcolor='#f15757'>Terms &amp; Conditions</font></string>
+    <string name="acceptterms">I Accept </string>
+    <string name="terms">  <font fgcolor='#f15757'>Terms &amp; Conditions</font></string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

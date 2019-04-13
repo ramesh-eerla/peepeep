@@ -9,7 +9,9 @@ import org.json.JSONObject;
 public interface ResponceCallback {
 
     public void callback(JSONObject responce);
+
     public void callback(Object responce, int requesttype);
+
     public void errorcallback(String errortitle, String errormessage);
 
 }
