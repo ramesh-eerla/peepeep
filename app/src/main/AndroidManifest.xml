@@ -40,9 +40,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".acitivities.Landingpage"
+            android:label="@string/title_activity_landingpage"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".acitivities.ResetPasswordActivity"
             android:label="@string/title_activity_reset_password"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".acitivities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />

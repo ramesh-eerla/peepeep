@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class DateValidater {
+public class DataValidater {
 
 
     private Pattern pattern;
@@ -19,7 +19,7 @@ public class DateValidater {
             "(0?[1-9]|1[012])/(0?[1-9]|[12][0-9]|3[01])/((19|20)\\d\\d)";
     String EMAIL_REGEX = "^(['_a-zA-Z0-9-]+)(\\.['_a-zA-Z0-9-]+)*@([a-zA-Z0-9-]+)(\\.[a-zA-Z0-9-]+)*(\\.[a-zA-Z]{2,5})$";
 
-    public DateValidater() {
+    public DataValidater() {
         pattern = Pattern.compile(DATE_PATTERN);
     }
 

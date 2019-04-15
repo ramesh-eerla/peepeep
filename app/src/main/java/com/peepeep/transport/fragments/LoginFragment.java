@@ -1,14 +1,11 @@
 package com.peepeep.transport.fragments;
 
 import android.Manifest;
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.AppCompatButton;
@@ -42,6 +39,7 @@ import com.peepeep.transport.R;
 import com.peepeep.transport.acitivities.ResetPasswordActivity;
 import com.peepeep.transport.interfaces.ResponceCallback;
 import com.peepeep.transport.servicerequest.PP_RetrofitSevicecall;
+import com.peepeep.transport.uicomponents.PpEditText;
 import com.peepeep.transport.utils.CommonHelper;
 import com.peepeep.transport.utils.CommonUtils;
 import com.peepeep.transport.utils.Constants;
@@ -77,7 +75,7 @@ public class LoginFragment extends Fragment implements ResponceCallback {
     private String TAG = "LoginActivity";
     // UI references.
     @BindView(R.id.email_edit)
-    EditText mEmailView;
+    PpEditText mEmailView;
     @BindView(R.id.pwd_edit)
     EditText mPasswordView;
     @BindView(R.id.forgotpwd)
@@ -156,9 +154,9 @@ public class LoginFragment extends Fragment implements ResponceCallback {
                 return false;
             }
         });
-        mEmailSignInButton.setBackground(CommonHelper.getGradientDrawable(getResources().getColor(R.color.colorDark), getResources().getColor(R.color.colorDark), 35));
-        gmaillogin.setBackground(CommonHelper.getGradientDrawable(getResources().getColor(R.color.white), getResources().getColor(R.color.gmail_red), 25));
-        fblogin.setBackground(CommonHelper.getGradientDrawable(getResources().getColor(R.color.white), getResources().getColor(R.color.facebook_color), 25));
+        mEmailSignInButton.setBackground(CommonHelper.getGradientDrawable(getResources().getColor(R.color.colorDark), getResources().getColor(R.color.colorDark), 85));
+        gmaillogin.setBackground(CommonHelper.getGradientDrawable(getResources().getColor(R.color.white), getResources().getColor(R.color.gmail_red), 45));
+        fblogin.setBackground(CommonHelper.getGradientDrawable(getResources().getColor(R.color.white), getResources().getColor(R.color.facebook_color), 45));
 
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -199,19 +197,23 @@ public class LoginFragment extends Fragment implements ResponceCallback {
         View focusView = null;
 
         // Check for a valid password, if the user entered one.
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            mPasswordView.setError(getString(R.string.error_invalid_password));
+        if (TextUtils.isEmpty(password) ) {
+            CommonHelper.setErrorTextBackground(mPasswordView,getActivity(), getString(R.string.error_field_required));
+            focusView = mPasswordView;
+            cancel = true;
+        }else if(!isPasswordValid(password)){
+            CommonHelper.setErrorTextBackground(mPasswordView,getActivity(), getString(R.string.error_invalid_password));
             focusView = mPasswordView;
             cancel = true;
         }
 
         // Check for a valid email address.
         if (TextUtils.isEmpty(email)) {
-            mEmailView.setError(getString(R.string.error_field_required));
+            CommonHelper.setErrorTextBackground(mEmailView,getActivity(), getString(R.string.error_field_required));
             focusView = mEmailView;
             cancel = true;
         } else if (!isEmailValid(email)) {
-            mEmailView.setError(getString(R.string.error_invalid_email));
+            CommonHelper.setErrorTextBackground(mEmailView,getActivity(),getString(R.string.error_invalid_email));
             focusView = mEmailView;
             cancel = true;
         }

@@ -53,10 +53,10 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.00">
 
-            <EditText
+            <com.peepeep.transport.uicomponents.PpEditText
                 android:id="@+id/email_edit"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dim_50"
+                android:layout_height="@dimen/dim_55"
                 android:layout_marginLeft="@dimen/dim_5"
                 android:background="@drawable/selet_edittext"
                 android:drawableStart="@drawable/ic_profile_round"
@@ -70,10 +70,10 @@
                 android:textCursorDrawable="@null"
                 android:textSize="@dimen/screen_title" />
 
-            <EditText
+            <com.peepeep.transport.uicomponents.PpEditText
                 android:id="@+id/pwd_edit"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dim_50"
+                android:layout_height="@dimen/dim_55"
                 android:layout_marginLeft="@dimen/dim_5"
                 android:layout_marginTop="@dimen/dim_10"
                 android:background="@drawable/selet_edittext"
@@ -99,7 +99,7 @@
                 android:textColor="@color/red_color"
                 android:textSize="@dimen/font_login" />
 
-            <android.support.v7.widget.AppCompatButton
+            <com.peepeep.transport.uicomponents.PpButton
                 android:id="@+id/email_sign_in_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -5,16 +5,18 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
 import android.text.Html;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.peepeep.transport.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.regex.Pattern;
 
 public class CommonHelper {
     private ProgressDialog dialog = null;
@@ -139,6 +141,43 @@ public class CommonHelper {
         // Set GradientDrawable width and in pixels
         gd.setSize(450, 150); // Width 450 pixels and height 150 pixels
         return gd;
+
+    }
+
+    public static View setErrorTextBackground(View view, Context context, String string) {
+        EditText editText;
+        int error_text_color = context.getResources().getColor(R.color.red_color);
+        // Initialize a new GradientDrawable
+        GradientDrawable gd = new GradientDrawable();
+
+        // Set the color array to draw gradient
+        gd.setColor(Color.WHITE);
+
+        gd.setCornerRadius(45);
+        // Set the GradientDrawable gradient type linear gradient
+        gd.setGradientType(GradientDrawable.RECTANGLE);
+
+        // Set GradientDrawable shape is a rectangle
+        gd.setShape(GradientDrawable.RECTANGLE);
+
+        // Set 3 pixels width solid blue color border
+        gd.setStroke(2, error_text_color);
+        try {
+            editText = (EditText) view;
+            editText.setText("");
+            editText.setHint(string);
+            editText.setHintTextColor(error_text_color);
+            editText.setBackground(gd);
+            view=editText;
+        } catch (Exception e) {
+            TextView textView = (TextView) view;
+            textView.setText(string);
+            textView.setTextColor(error_text_color);
+            view=textView;
+
+        }
+        return view;
+
 
     }
 }

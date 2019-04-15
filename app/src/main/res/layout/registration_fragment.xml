@@ -43,7 +43,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.00">
 
-            <EditText
+            <com.peepeep.transport.uicomponents.PpEditText
                 android:id="@+id/user_edit"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dim_50"
@@ -61,7 +61,7 @@
                 android:textSize="@dimen/screen_title" />
 
 
-            <EditText
+            <com.peepeep.transport.uicomponents.PpEditText
                 android:id="@+id/phone_edit"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dim_50"
@@ -80,7 +80,7 @@
                 android:textSize="@dimen/screen_title" />
 
 
-            <EditText
+            <com.peepeep.transport.uicomponents.PpEditText
                 android:id="@+id/email_edit"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dim_50"
@@ -99,7 +99,7 @@
                 android:textSize="@dimen/screen_title" />
 
 
-            <EditText
+            <com.peepeep.transport.uicomponents.PpEditText
                 android:id="@+id/pwd_edit"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dim_50"
@@ -118,7 +118,7 @@
                 android:textSize="@dimen/screen_title" />
 
 
-            <EditText
+            <com.peepeep.transport.uicomponents.PpEditText
                 android:id="@+id/cnfpwd_edit"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dim_50"
@@ -182,7 +182,7 @@
                     android:text="@string/terms" />
             </LinearLayout>
 
-            <android.support.v7.widget.AppCompatButton
+            <com.peepeep.transport.uicomponents.PpButton
                 android:id="@+id/register_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

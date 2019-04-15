@@ -73,7 +73,15 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-
+            case R.id.register_button :
+               if( validateallfields())
+            break;
         }
+    }
+
+    private boolean validateallfields() {
+        boolean status=false;
+
+    return status;
     }
 }
