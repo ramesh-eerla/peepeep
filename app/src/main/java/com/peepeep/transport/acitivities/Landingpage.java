@@ -13,6 +13,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.peepeep.transport.R;
+
 public class Landingpage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
