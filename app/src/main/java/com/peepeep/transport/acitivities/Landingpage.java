@@ -17,7 +17,7 @@ import com.peepeep.transport.R;
 
 public class Landingpage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+//updated status
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
