@@ -36,6 +36,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.peepeep.transport.R;
+import com.peepeep.transport.acitivities.BookingActivity;
 import com.peepeep.transport.acitivities.ResetPasswordActivity;
 import com.peepeep.transport.interfaces.ResponceCallback;
 import com.peepeep.transport.servicerequest.PP_RetrofitSevicecall;
@@ -229,6 +230,9 @@ public class LoginFragment extends Fragment implements ResponceCallback {
             mRt_retrofitSevicecall.loginpost(Constants.PP_LOGIN,login);*/
 
         }
+        Intent intent = new Intent(getActivity(), BookingActivity.class);
+        startActivity(intent);
+
 
     }
 
