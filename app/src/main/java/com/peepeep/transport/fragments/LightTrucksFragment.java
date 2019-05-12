@@ -32,6 +32,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.peepeep.transport.R;
 import com.peepeep.transport.acitivities.BookingActivity;
+import com.peepeep.transport.acitivities.InvoiceActivity;
 import com.peepeep.transport.uicomponents.PpEditText;
 import com.peepeep.transport.utils.CommonHelper;
 import com.peepeep.transport.utils.DateAndTimePickerUtils;
@@ -256,6 +257,8 @@ public class LightTrucksFragment extends Fragment implements View.OnClickListene
                 bottomSheet1.show(getActivity().getSupportFragmentManager(), "exampleBottomSheet");
                 break;
             case R.id.any_truck_layout:
+                startActivity(new Intent(getActivity(), InvoiceActivity.class));
+
                 break;
             case R.id.book_vehicle_button://book the vehicle
                 break;

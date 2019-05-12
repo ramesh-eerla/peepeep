@@ -41,7 +41,7 @@ public class PpButton extends AppCompatButton {
      */
     private void init(Context context) {
         mCntxt = context;
-        setBackground(CommonHelper.getGradientDrawable(getResources().getColor(R.color.colorDark), getResources().getColor(R.color.colorDark), 85));
+        setBackground(getResources().getDrawable(R.drawable.topgradient));//CommonHelper.getGradientDrawable(getResources().getColor(R.color.colorDark), getResources().getColor(R.color.colorDark), 85));
     }
 
     /**

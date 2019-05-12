@@ -35,7 +35,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/califi"
+        android:fontFamily="@font/avenir"
         android:id="@+id/pick_lable"
         android:text="@string/pick"
         android:textSize="@dimen/headingfont"
@@ -61,7 +61,7 @@
 <androidx.appcompat.widget.AppCompatTextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:fontFamily="@font/califi"
+    android:fontFamily="@font/avenir"
     android:textStyle="bold"
     android:gravity="center"
     android:id="@+id/start_day_lable"
@@ -78,7 +78,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/califi"
+                android:fontFamily="@font/avenir"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:id="@+id/start_week_lable"
@@ -94,7 +94,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/califi"
+                android:fontFamily="@font/avenir"
                 android:textStyle="bold"
                 android:textSize="@dimen/headingfont"
                 android:id="@+id/start_month_lable"
@@ -105,7 +105,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/califi"
+            android:fontFamily="@font/avenir"
             android:textColor="@android:color/black"
             android:gravity="center"
             android:textSize="@dimen/headingfont"
@@ -135,14 +135,14 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/califi"
+                android:fontFamily="@font/avenir"
                 android:layout_marginLeft="@dimen/dim_2"
                 android:layout_marginRight="@dimen/dim_2"
                 android:singleLine="true"
 
                 android:id="@+id/start_location_lable"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/regularfont"
+                android:textSize="@dimen/sp10"
                 android:text="Bundlaguda jagir ,hy"/>
         </LinearLayout>
 
@@ -164,7 +164,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/califi"
+            android:fontFamily="@font/avenir"
             android:text="@string/drop"
             android:textSize="@dimen/headingfont"
             android:id="@+id/drop_lable"
@@ -190,7 +190,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/califi"
+            android:fontFamily="@font/avenir"
             android:textStyle="bold"
             android:gravity="center"
             android:id="@+id/drop_day_lable"
@@ -207,7 +207,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/califi"
+                android:fontFamily="@font/avenir"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:id="@+id/drop_week_lable"
@@ -223,7 +223,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/califi"
+                android:fontFamily="@font/avenir"
                 android:textStyle="bold"
                 android:textSize="@dimen/headingfont"
                 android:id="@+id/drop_month_lable"
@@ -234,7 +234,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/califi"
+            android:fontFamily="@font/avenir"
             android:textColor="@android:color/black"
             android:gravity="center"
             android:id="@+id/drop_time_lable"
@@ -264,13 +264,13 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/califi"
+                android:fontFamily="@font/avenir"
                 android:layout_marginLeft="@dimen/dim_2"
                 android:layout_marginRight="@dimen/dim_2"
                 android:id="@+id/drop_location_lable"
                 android:singleLine="true"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/regularfont"
+                android:textSize="@dimen/sp10"
                 android:text="Bundlaguda jagir ,hy"/>
         </LinearLayout>
     </LinearLayout>
@@ -292,7 +292,7 @@
             android:textSize="@dimen/regularfont"
               android:id="@+id/material_weight_lable"
             android:layout_marginTop="@dimen/dim_5"
-            android:fontFamily="@font/califi"
+            android:fontFamily="@font/avenir"
             android:text="Material Weight:"/>
         <androidx.appcompat.widget.AppCompatAutoCompleteTextView
             android:layout_width="match_parent"
@@ -307,7 +307,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/califi"
+            android:fontFamily="@font/avenir"
             android:layout_marginTop="@dimen/dim_5"
             android:textSize="@dimen/regularfont"
             android:id="@+id/material_type_lable"
@@ -341,7 +341,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/califi"
+        android:fontFamily="@font/avenir"
         android:textSize="@dimen/screen_title"
         android:textStyle="bold"
         android:textColor="@color/dark_blue"
@@ -385,7 +385,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/califi"
+                android:fontFamily="@font/avenir"
                 android:layout_marginTop="@dimen/dim_10"
                 android:textStyle="bold"
                 android:textSize="@dimen/headingfont"
@@ -411,7 +411,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/califi"
+                android:fontFamily="@font/avenir"
                 android:id="@+id/close_truck_lable"
                 android:layout_marginTop="@dimen/dim_10"
                 android:textStyle="bold"
@@ -437,7 +437,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/califi"
+                android:fontFamily="@font/avenir"
                 android:layout_marginTop="@dimen/dim_10"
                 android:id="@+id/any_truck_lable"
                 android:textSize="@dimen/headingfont"
@@ -479,7 +479,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/califi"
+                android:fontFamily="@font/avenir"
                 android:layout_marginTop="@dimen/dim_5"
                 android:id="@+id/labour_lable"
                 android:textSize="@dimen/screen_title"

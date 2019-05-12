@@ -252,10 +252,9 @@ public class LoginFragment extends Fragment implements ResponceCallback {
     };
 
     public void afterloginnavigation() {
-    /*Intent intent = new Intent(LoginActivity.this,
-            LandigpageActivity.class);
-    intent.putExtra("userProfile", json_object.toString());
-    startActivity(intent);*/
+    Intent intent = new Intent(getActivity(),
+            Landingpage.class);
+    startActivity(intent);
         //startActivity(new Intent(LoginActivity.this,LandigpageActivity.class));
     }
 
@@ -358,6 +357,8 @@ public class LoginFragment extends Fragment implements ResponceCallback {
         if(loginDataset.getIsResponseSuccess()==false)
         CommonHelper.showErrorAlertDiaolog(mContext, "Login Failure", loginDataset.getResponseMsg());
         else
+        afterloginnavigation();
+
         afterloginnavigation();
     }
 

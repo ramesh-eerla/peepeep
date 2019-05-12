@@ -10,7 +10,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fontFamily="@font/califi"
+        android:fontFamily="@font/avenir"
         android:textSize="@dimen/screen_title"
         android:gravity="center"
         android:text="@string/hello_blank_fragment" />

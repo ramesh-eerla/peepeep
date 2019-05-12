@@ -16,7 +16,8 @@
 
 
 
-
+<color name="dark_text">#565656</color>
+    <color name="light_text">#979797</color>
 
 
     <color name="item_text_color">#617A9F</color>
