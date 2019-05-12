@@ -13,12 +13,18 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="base_url">http://13.127.133.133/api</string>
+    <string name="login_url">api/mobileregistration/UserLogin</string>
+    <string name="regist_url">api/mobileregistration/mobileregistration</string>
     <string name="facebook">Facebook</string>
     <string name="google">Google</string>
+    <string name="business_name">Business Name</string>
+    <string name="gst">GST Number</string>
     <string name="forbussiness">For Business</string>
     <string name="facebook_app_id">275774476694873</string>
     <string name="fb_login_protocol_scheme">fb275774476694873</string>
     <string name="register">Register</string>
+    <string name="send">Send</string>
     <string name="forgetpassword">Forgot Password ?</string>
     <!--splash related strings-->
     <string name="next">NEXT</string>
@@ -36,10 +42,18 @@
     <string name="slide_4_title">Post/Call Your Requirement </string>
     <string name="slide_4_desc">You can easily post/Call your nearest for Transport </string>
     <string name="acceptterms">I Accept </string>
+    <string name="insurenc">Insurance</string>
     <string name="terms">  <font fgcolor='#f15757'>Terms &amp; Conditions</font></string>
+    <string name="pick">Pick Up</string>
+    <string name="drop">Drop</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="any">Any</string>
+    <string name="labour">Labour</string>
+    <string name="book">Book Vehicle</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">This Feature will avilable in next Version</string>
     <string name="title_activity_reset_password">ResetPasswordActivity</string>
     <string name="title_activity_landingpage">Landingpage</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>

@@ -4,36 +4,30 @@ package com.peepeep.transport.controller;
  */
 
 
-import android.app.AlertDialog;
 import android.app.Application;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.TextUtils;
-import android.util.Log;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.multidex.MultiDexApplication;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.peepeep.transport.R;
 import com.peepeep.transport.interfaces.PPRequestInterface;
 
-import org.json.JSONObject;
-
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import retrofit2.Retrofit;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class AppController extends Application {
+public class AppController extends Application
+{
 
     public static final String TAG = AppController.class.getSimpleName();
 
@@ -88,7 +82,7 @@ public class AppController extends Application {
             // Set alert dialog ic_launcher
 
             // Set OK Button
-            alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+            alertDialog.setButton(0,"OK", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
 
                 }
@@ -112,9 +106,9 @@ public class AppController extends Application {
 
     public static PPRequestInterface getInterfaceService(Context mContext) {
 
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+       /* HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         // set your desired log level
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);*/
 
         OkHttpClient okHttpClient = null;
 
@@ -131,15 +125,15 @@ public class AppController extends Application {
                                 .build());
                     }
                 })
-                .addInterceptor(logging)
+
                 .build();
 
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(/*mContext.getResources().getString(
-                        R.string.base_URL)*/ " " + "/")
+                .baseUrl(mContext.getResources().getString(
+                        R.string.base_url)+ "/")
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();

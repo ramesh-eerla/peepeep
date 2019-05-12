@@ -1,6 +1,10 @@
 package com.peepeep.transport.interfaces;
 
 
+import com.peepeep.transport.servicerequest.responsemodels.LoginDataset;
+import com.peepeep.transport.servicerequest.responsemodels.RegistrationDataset;
+import com.peepeep.transport.servicerequest.retrofitrequestparams.Retrofit_RequestParams;
+
 import java.util.List;
 import java.util.Map;
 
@@ -25,9 +29,13 @@ public interface PPRequestInterface {
      * @Body : parameters for the request
      */
 
-    /*@POST("{methodname}")
-    Call<RetrofitResponse> user_Register(@Path("methodname") String methodname, @Body RequestParams.Register task);
+   @POST("{methodname}")
+    Call<LoginDataset> user_login(@Path("methodname") String methodname, @Query("userName") String userName,@Query("password") String password);
 
+    @POST("{methodname}")
+    Call<RegistrationDataset> peeppRegistration(@Path("methodname") String methodname, @Body Retrofit_RequestParams.RegistrationParams task);
+
+   /*
     @POST("{methodname}")
     Call<Object> searchrooms(@Path("methodname") String methodname, @Body RequestParams.SearchTypes task);
 

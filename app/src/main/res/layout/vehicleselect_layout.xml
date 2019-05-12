@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:paddingTop="@dimen/dim_1"
+android:background="#99000000"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout     android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:background="@drawable/vehicle_selectbacground"
+        android:layout_height="@dimen/dim_500"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dim_10"
+        android:weightSum="3">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/califi"
+            android:textSize="@dimen/login_font_size"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:text="@string/open" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/califi"
+            android:textSize="@dimen/login_font_size"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:text="@string/close" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/califi"
+            android:textSize="@dimen/login_font_size"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:text="@string/any" />
+
+    </LinearLayout>
+    <include layout="@layout/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_100">
+
+    </include>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dim_25"
+        android:paddingRight="@dimen/dim_25"
+        android:paddingTop="@dimen/dim_5"
+        android:paddingBottom="@dimen/dim_5"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/califi"
+            android:textSize="@dimen/login_font_size"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:text="Piaggio Ape" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/califi"
+            android:textSize="@dimen/screen_title"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:text="Capacity : 5 tons" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dim_10"
+            android:layout_marginBottom="@dimen/dim_10"
+            android:layout_height="@dimen/dim_2"
+            android:background="#4Dffffff"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dim_15"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/califi"
+                android:textSize="@dimen/screen_title"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:text="Width : \n Piaggio Ape" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/califi"
+                android:textSize="@dimen/screen_title"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:text="Height : \n5 feets" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/califi"
+                android:textSize="@dimen/screen_title"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:text="Length : \n5 feets" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dim_10"
+            android:layout_height="@dimen/dim_2"
+            android:layout_marginBottom="@dimen/dim_10"
+            android:background="#4Dffffff"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/califi"
+                android:textSize="@dimen/screen_title"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:text="Base fare : \n Piaggio Ape" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/califi"
+                android:textSize="@dimen/screen_title"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:text="Rate/min \n : 50 \-Rs/45min" />
+
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/email_sign_in_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim_50"
+            android:elevation="@dimen/dim_10"
+            android:textAllCaps="false"
+            android:background="@drawable/topgradient"
+            android:fontFamily="@font/califi"
+            android:text="Selecte"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/screen_title"
+            android:textStyle="bold" />
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

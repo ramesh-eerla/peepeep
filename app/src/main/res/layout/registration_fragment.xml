@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:gravity="center_horizontal"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -42,29 +43,52 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.00">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
 
             <com.peepeep.transport.uicomponents.PpEditText
-                android:id="@+id/user_edit"
+                android:id="@+id/user_fname"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dim_50"
+                android:layout_height="@dimen/edittextboxheight"
                 android:layout_marginLeft="@dimen/dim_5"
+                android:layout_weight="1"
                 android:background="@drawable/selet_edittext"
                 android:drawableStart="@drawable/ic_profile_round"
                 android:drawablePadding="@dimen/dim_15"
                 android:fontFamily="@font/califi"
-                android:hint="User Name"
+                android:hint="First Name"
+                android:visibility="visible"
                 android:inputType="text"
                 android:paddingLeft="@dimen/dim_10"
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray"
                 android:textCursorDrawable="@null"
-                android:textSize="@dimen/screen_title" />
+                android:textSize="@dimen/regularfont" />
+                <com.peepeep.transport.uicomponents.PpEditText
+                    android:id="@+id/user_lname"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edittextboxheight"
+                    android:layout_marginLeft="@dimen/dim_5"
+                    android:layout_weight="1"
+                    android:background="@drawable/selet_edittext"
+                    android:fontFamily="@font/califi"
+                    android:hint="Last Name"
+                    android:visibility="visible"
+                    android:inputType="text"
+                    android:paddingLeft="@dimen/dim_15"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/regularfont" />
 
-
+            </LinearLayout>
             <com.peepeep.transport.uicomponents.PpEditText
                 android:id="@+id/phone_edit"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dim_50"
+                android:layout_height="@dimen/edittextboxheight"
                 android:layout_marginLeft="@dimen/dim_5"
                 android:layout_marginTop="@dimen/dim_7"
                 android:background="@drawable/selet_edittext"
@@ -77,13 +101,13 @@
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray"
                 android:textCursorDrawable="@null"
-                android:textSize="@dimen/screen_title" />
+                android:textSize="@dimen/regularfont" />
 
 
             <com.peepeep.transport.uicomponents.PpEditText
                 android:id="@+id/email_edit"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dim_50"
+                android:layout_height="@dimen/edittextboxheight"
                 android:layout_marginLeft="@dimen/dim_5"
                 android:layout_marginTop="@dimen/dim_7"
                 android:background="@drawable/selet_edittext"
@@ -96,13 +120,13 @@
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray"
                 android:textCursorDrawable="@null"
-                android:textSize="@dimen/screen_title" />
+                android:textSize="@dimen/regularfont" />
 
 
             <com.peepeep.transport.uicomponents.PpEditText
                 android:id="@+id/pwd_edit"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dim_50"
+                android:layout_height="@dimen/edittextboxheight"
                 android:layout_marginLeft="@dimen/dim_5"
                 android:layout_marginTop="@dimen/dim_7"
                 android:background="@drawable/selet_edittext"
@@ -115,13 +139,13 @@
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray"
                 android:textCursorDrawable="@null"
-                android:textSize="@dimen/screen_title" />
+                android:textSize="@dimen/regularfont" />
 
 
             <com.peepeep.transport.uicomponents.PpEditText
                 android:id="@+id/cnfpwd_edit"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dim_50"
+                android:layout_height="@dimen/edittextboxheight"
                 android:layout_marginLeft="@dimen/dim_5"
                 android:layout_marginTop="@dimen/dim_7"
                 android:background="@drawable/selet_edittext"
@@ -134,7 +158,7 @@
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray"
                 android:textCursorDrawable="@null"
-                android:textSize="@dimen/screen_title" />
+                android:textSize="@dimen/regularfont" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -151,14 +175,48 @@
                     android:textSize="@dimen/screen_title" />
 
                 <ToggleButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/ic_toggile"
+                    android:id="@+id/business_toggle"
+                    android:padding="@dimen/dim_5"
+                    android:layout_marginLeft="@dimen/dim_10"
+                    android:layout_width="@dimen/dim_65"
+                    android:layout_height="@dimen/dim_28"
+                    android:background="@drawable/toggleonoff_selector"
                     android:gravity="center"
                     android:textOff=""
                     android:textOn="" />
             </LinearLayout>
-
+            <com.peepeep.transport.uicomponents.PpEditText
+                android:id="@+id/orgname_edit"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edittextboxheight"
+                android:layout_marginLeft="@dimen/dim_5"
+                android:layout_marginTop="@dimen/dim_7"
+                android:background="@drawable/selet_edittext"
+                android:fontFamily="@font/califi"
+                android:hint="@string/business_name"
+                android:inputType="text"
+                android:paddingLeft="@dimen/dim_15"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/regularfont" />
+            <com.peepeep.transport.uicomponents.PpEditText
+            android:id="@+id/gst_edit"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edittextboxheight"
+            android:layout_marginLeft="@dimen/dim_5"
+            android:layout_marginTop="@dimen/dim_7"
+            android:background="@drawable/selet_edittext"
+            android:fontFamily="@font/califi"
+            android:hint="@string/gst"
+            android:inputType="text"
+            android:paddingLeft="@dimen/dim_15"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/regularfont" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -166,7 +224,7 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <android.support.v7.widget.AppCompatCheckBox
+                <androidx.appcompat.widget.AppCompatCheckBox
                     android:id="@+id/termscheckbox"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/dim_60"

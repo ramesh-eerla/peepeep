@@ -8,6 +8,8 @@ import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 
+import androidx.appcompat.widget.AppCompatEditText;
+
 import com.peepeep.transport.R;
 
 
@@ -16,7 +18,7 @@ import com.peepeep.transport.R;
  * Custom Edit Text to apply the custom type face
  * </p>
  */
-public class PpEditText extends android.support.v7.widget.AppCompatEditText {
+public class PpEditText extends AppCompatEditText {
 
     private Context mCntxt;
     private IOnBackButtonListener mListener;

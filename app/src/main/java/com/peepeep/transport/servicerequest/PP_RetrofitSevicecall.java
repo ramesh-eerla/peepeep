@@ -8,8 +8,16 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.google.gson.internal.LinkedTreeMap;
+import com.peepeep.transport.R;
+import com.peepeep.transport.controller.AppController;
+import com.peepeep.transport.interfaces.PPRequestInterface;
 import com.peepeep.transport.interfaces.ResponceCallback;
+import com.peepeep.transport.servicerequest.responsemodels.LoginDataset;
+import com.peepeep.transport.servicerequest.responsemodels.RegistrationDataset;
+import com.peepeep.transport.servicerequest.responsemodels.RetrofitErrorResponse;
+import com.peepeep.transport.servicerequest.retrofitrequestparams.Retrofit_RequestParams;
 import com.peepeep.transport.utils.CommonHelper;
+import com.peepeep.transport.utils.Constants;
 
 
 import java.io.IOException;
@@ -21,6 +29,7 @@ import java.util.Map;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.http.Query;
 
 /**
  * Created by ramesh.eerla on 4/4/2019.
@@ -28,10 +37,13 @@ import retrofit2.Response;
 
 public class PP_RetrofitSevicecall {
     public Context mContext;
+    /*
+
     public Call<Object> mService;
-    /* public Call<LoginDataset> mService_delete;
+    public Call<LoginDataset> mService_login;
+
      public Call<RetrofitResponse> mService_submit;*/
-    ProgressDialog mProgressDialog;
+   // ProgressDialog mProgressDialog;
     CommonHelper mCommonHelper;
     ResponceCallback mResponceCallback;
 
@@ -47,16 +59,19 @@ public class PP_RetrofitSevicecall {
         this.mCommonHelper = new CommonHelper();
     }
 
-    /*public void loginpost(final int requestType, Object mUploadResumeFile) {
-        mService_delete=getRequestType(requestType,mUploadResumeFile);
-        if (mCommonHelper!=null&& mContext != null)
-            mProgressDialog = mCommonHelper.showDialog(mContext);
+    public void loginpost(final int requestType,String muserName,String mpassword) {
 
-        mService_delete.enqueue(new Callback<LoginDataset>() {
+        /*if (mCommonHelper!=null&& mContext != null)
+            mProgressDialog = mCommonHelper.showDialog(mContext);
+*/
+        PPRequestInterface mApiService = AppController.getInterfaceService(mContext);
+        Call<LoginDataset>  mService= mApiService.user_login(mContext.getString(R.string.login_url),  muserName,mpassword);
+
+        mService.enqueue(new Callback<LoginDataset>() {
 
             @Override
             public void onResponse(Call<LoginDataset> call, Response<LoginDataset> response) {
-                mProgressDialog.dismiss();
+               // mProgressDialog.dismiss();
                 if (response.isSuccessful()) {
                     SharedPreferences mPrefs = mContext.getSharedPreferences("Login_repsonse",mContext.MODE_PRIVATE);
                      SharedPreferences.Editor prefsEditor = mPrefs.edit();
@@ -85,37 +100,37 @@ public class PP_RetrofitSevicecall {
 
             @Override
             public void onFailure(Call<LoginDataset> call, Throwable t) {
-                mProgressDialog.dismiss();
+                //mProgressDialog.dismiss();
                 call.cancel();
                 if(t instanceof SocketTimeoutException)
-                    CommonHelper.showErrorAlertDiaolog(mContext, "Connection Timeout", Constants.ST_CONECTIONTIMEOUT_Error_Message);
+                    CommonHelper.showErrorAlertDiaolog(mContext, "Connection Timeout", Constants.PP_CONECTIONTIMEOUT_Error_Message);
                 else if(t instanceof UnknownHostException)
                     CommonHelper.showErrorAlertDiaolog(mContext, "UnknownHost", t.getMessage());
                 else
-                    CommonHelper.showErrorAlertDiaolog(mContext, "No Network", Constants.ST_NONETWORK_Error_Message);
+                    CommonHelper.showErrorAlertDiaolog(mContext, "No Network", Constants.PP_NONETWORK_Error_Message);
             }
         });
     }
-    public void searchPost(final int requestType, Object mUploadResumeFile) {
-        mService=getRequestType(requestType,mUploadResumeFile);
-        if (mCommonHelper!=null&& mContext != null&&requestType!=Constants.RT_SEARCH_LOCATION)
-            mProgressDialog = mCommonHelper.showDialog(mContext);
 
-        mService.enqueue(new Callback<Object>() {
+    public void Registration_post(Call<RegistrationDataset> mService, Object mUploadResumeFile) {
+
+
+
+        mService.enqueue(new Callback<RegistrationDataset>() {
             @Override
-            public void onResponse(Call<Object> call, Response<Object> response) {
-                if(requestType!=Constants.RT_SEARCH_LOCATION)
-                    mProgressDialog.dismiss();
+            public void onResponse(Call<RegistrationDataset> call, Response<RegistrationDataset> response) {
+               /* if(requestType!=Constants.RT_SEARCH_LOCATION)
+                    mProgressDialog.dismiss();*/
                 if (response.isSuccessful()) {
 
                     try {
-                        List<DetailsDataset> data = (List<DetailsDataset>) response.body();
-                        mResponceCallback.callback(data, requestType);
+                        List<RegistrationDataset> data = (List<RegistrationDataset>) response.body();
+                        mResponceCallback.callback(data,0);
                     } catch (Exception e) {
-                        LinkedTreeMap data=(LinkedTreeMap) response.body();
-                         String valu=data.get("message").toString();
+                       // LinkedTreeMap data=(LinkedTreeMap) response.body();
+                         //String valu=data.get("message").toString();
 
-                        CommonHelper.showErrorAlertDiaolog(mContext, "Message", valu);
+                      //  CommonHelper.showErrorAlertDiaolog(mContext, "Message", valu);
 
                     }
                 }
@@ -126,22 +141,22 @@ public class PP_RetrofitSevicecall {
             }
 
             @Override
-            public void onFailure(Call<Object> call, Throwable t) {
-                if(requestType!=Constants.RT_SEARCH_LOCATION) {
-                    mProgressDialog.dismiss();
+            public void onFailure(Call<RegistrationDataset> call, Throwable t) {
+              /*  if(requestType!=Constants.PP_SEARCH_LOCATION) {
+                    mProgressDialog.dismiss();*/
                     call.cancel();
                     if (t instanceof SocketTimeoutException)
-                        CommonHelper.showErrorAlertDiaolog(mContext, "Connection Timeout", Constants.ST_CONECTIONTIMEOUT_Error_Message);
+                        CommonHelper.showErrorAlertDiaolog(mContext, "Connection Timeout", Constants.PP_CONECTIONTIMEOUT_Error_Message);
                     else if (t instanceof UnknownHostException)
                         CommonHelper.showErrorAlertDiaolog(mContext, "UnknownHost", t.getMessage());
                     else
-                        CommonHelper.showErrorAlertDiaolog(mContext, "No Network", Constants.ST_NONETWORK_Error_Message);
-                }
+                        CommonHelper.showErrorAlertDiaolog(mContext, "No Network", Constants.PP_NONETWORK_Error_Message);
+                //}
             }
         });
     }
 
-    public void submitPost(final int requestType,String methodname, Object mUploadResumeFile) {
+    /*public void submitPost(final int requestType,String methodname, Object mUploadResumeFile) {
 
         mService_submit=getRequestTypemethod(requestType,methodname,mUploadResumeFile);
         if (mCommonHelper!=null&& mContext != null&&requestType!=Constants.RT_SEARCH_LOCATION)

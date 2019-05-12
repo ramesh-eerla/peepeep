@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:facebook="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.45" />
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dim_440"
         android:gravity="center"
@@ -56,7 +56,7 @@
             <com.peepeep.transport.uicomponents.PpEditText
                 android:id="@+id/email_edit"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dim_55"
+                android:layout_height="@dimen/edittextboxheight"
                 android:layout_marginLeft="@dimen/dim_5"
                 android:background="@drawable/selet_edittext"
                 android:drawableStart="@drawable/ic_profile_round"
@@ -68,12 +68,12 @@
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray"
                 android:textCursorDrawable="@null"
-                android:textSize="@dimen/screen_title" />
+                android:textSize="@dimen/regularfont" />
 
             <com.peepeep.transport.uicomponents.PpEditText
                 android:id="@+id/pwd_edit"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dim_55"
+                android:layout_height="@dimen/edittextboxheight"
                 android:layout_marginLeft="@dimen/dim_5"
                 android:layout_marginTop="@dimen/dim_10"
                 android:background="@drawable/selet_edittext"
@@ -86,9 +86,9 @@
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray"
                 android:textCursorDrawable="@null"
-                android:textSize="@dimen/screen_title" />
+                android:textSize="@dimen/regularfont" />
 
-            <android.support.v7.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/forgotpwd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
                 android:padding="@dimen/tab_title_size_one"
                 android:text="@string/forgetpassword"
                 android:textColor="@color/red_color"
-                android:textSize="@dimen/font_login" />
+                android:textSize="@dimen/screen_title" />
 
             <com.peepeep.transport.uicomponents.PpButton
                 android:id="@+id/email_sign_in_button"
@@ -107,15 +107,16 @@
                 android:background="@drawable/topgradient"
                 android:fontFamily="@font/califi"
                 android:text="@string/action_sign_in_short"
+                android:textAllCaps="false"
                 android:textColor="@android:color/white"
-                android:textSize="@dimen/action_titile"
+                android:textSize="@dimen/screen_title"
                 android:textStyle="bold" />
 
 
         </LinearLayout>
 
 
-        <android.support.v7.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/fblogin"
             android:layout_width="@dimen/dim_100"
             android:layout_height="@dimen/dim_45"
@@ -124,6 +125,7 @@
             android:text="@string/facebook"
             android:textColor="@color/facebook_color"
             android:visibility="visible"
+            android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -131,7 +133,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.70" />
 
-        <android.support.v7.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/gmaillogin"
             android:layout_width="@dimen/dim_100"
             android:layout_height="@dimen/dim_45"
@@ -139,6 +141,7 @@
             android:background="@drawable/shape_edittext"
             android:onClick="gmaillogin"
             android:text="@string/google"
+            android:textAllCaps="false"
             android:textColor="@color/gmail_red"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -148,7 +151,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.70" />
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <!--<FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -162,4 +165,4 @@
             </FrameLayout>-->
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

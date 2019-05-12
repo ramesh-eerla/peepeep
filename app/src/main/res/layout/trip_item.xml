@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dim_5"
+        android:background="@drawable/select_layout"
+        android:elevation="@dimen/dim_6"
+        android:padding="@dimen/dim_5"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dim_10">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ape | Open"
+                android:id="@+id/tr_type"
+                android:textColor="@color/dark_blue"
+                android:textSize="@dimen/regularfont"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:id="@+id/tr_date"
+                android:text="April 14 2019"
+                android:textColor="@color/dark_blue"
+                android:textSize="@dimen/regularfont"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_60"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dim_5"
+                android:layout_marginRight="@dimen/dim_5"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_pick_point" />
+
+                <View
+                    android:layout_width="@dimen/dim_5"
+                    android:layout_height="@dimen/dim_15"
+                    android:background="@color/item_line_color" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    app:srcCompat="@drawable/ic_drop_point" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/dim_5"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12:00 pm"
+                        android:id="@+id/tr_st_time"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="@dimen/regularfont"
+                         />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dim_10"
+                        android:text="your current location"
+                        android:id="@+id/tr_current_location"
+                        android:textColor="@color/item_text_color"
+                        android:textSize="@dimen/regularfont"
+                         />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/dim_5"
+                    android:layout_height="@dimen/dim_10" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12:00 pm"
+                        android:id="@+id/tr_end_time"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="@dimen/regularfont"
+                         />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dim_10"
+                        android:text="drop  location"
+                        android:id="@+id/tr_drop_location"
+                        android:textColor="@color/item_text_color"
+                        android:textSize="@dimen/regularfont"
+                         />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/foot_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+
+            <Button
+                android:id="@+id/footer_submit_button"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/bottomleftradiouslayout"
+                android:padding="5dp"
+                android:text="Track"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/footer_cancel_button"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/bottomrightradiouslayout"
+                android:padding="5dp"
+                android:text="cancel"
+                android:textAllCaps="false" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

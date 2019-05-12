@@ -7,10 +7,12 @@ import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 
+import androidx.appcompat.widget.AppCompatButton;
+
 import com.peepeep.transport.R;
 import com.peepeep.transport.utils.CommonHelper;
 
-public class PpButton extends android.support.v7.widget.AppCompatButton {
+public class PpButton extends AppCompatButton {
 
     private Context mCntxt;
     private PpEditText.IOnBackButtonListener mListener;

@@ -6,9 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.AppCompatButton;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -20,6 +17,10 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
 
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -36,10 +37,12 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.peepeep.transport.R;
-import com.peepeep.transport.acitivities.BookingActivity;
+import com.peepeep.transport.acitivities.Landingpage;
 import com.peepeep.transport.acitivities.ResetPasswordActivity;
 import com.peepeep.transport.interfaces.ResponceCallback;
 import com.peepeep.transport.servicerequest.PP_RetrofitSevicecall;
+import com.peepeep.transport.servicerequest.responsemodels.LoginDataset;
+import com.peepeep.transport.servicerequest.retrofitrequestparams.Retrofit_RequestParams;
 import com.peepeep.transport.uicomponents.PpEditText;
 import com.peepeep.transport.utils.CommonHelper;
 import com.peepeep.transport.utils.CommonUtils;
@@ -49,6 +52,8 @@ import com.peepeep.transport.utils.Constants;
 import org.json.JSONObject;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -122,7 +127,8 @@ public class LoginFragment extends Fragment implements ResponceCallback {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.login_fragment, container, false);
-        ButterKnife.bind(this, view);
+        ButterKnife.bind(this,view);
+        mContext=getActivity();
         // Inflate the layout for this fragment
         callbackManager = CallbackManager.Factory.create();
         if (!hasPermissions(getActivity(), PERMISSIONS)) {
@@ -133,7 +139,7 @@ public class LoginFragment extends Fragment implements ResponceCallback {
                 .requestIdToken(Constants.GmailOauthid)
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
-        mRt_retrofitSevicecall = new PP_RetrofitSevicecall(mContext);
+        mRt_retrofitSevicecall = new PP_RetrofitSevicecall(getContext(),this);
         AccessToken accessToken = AccessToken.getCurrentAccessToken();
         boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
         if (isLoggedIn) {
@@ -141,8 +147,7 @@ public class LoginFragment extends Fragment implements ResponceCallback {
         }
         // mCommonHelper=new CommonHelper();
         // Set up the login form.
-        mEmailView.setText("test@gmail.com");
-        mPasswordView.setText("12345678");
+
 
 
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -225,13 +230,14 @@ public class LoginFragment extends Fragment implements ResponceCallback {
             focusView.requestFocus();
         } else {
 
-           /* RequestParams.LoginDetails login= new RequestParams().new LoginDetails().loginWithEmail(email,password);
+         // startActivity(new Intent(getActivity(), Landingpage.class));
 
-            mRt_retrofitSevicecall.loginpost(Constants.PP_LOGIN,login);*/
+
+           mRt_retrofitSevicecall.loginpost(Constants.PP_LOGIN,email,password);
 
         }
-        Intent intent = new Intent(getActivity(), BookingActivity.class);
-        startActivity(intent);
+        /*Intent intent = new Intent(getActivity(), BookingActivity.class);
+        startActivity(intent);*/
 
 
     }
@@ -348,11 +354,11 @@ public class LoginFragment extends Fragment implements ResponceCallback {
 
     @Override
     public void callback(Object responce, int requesttype) {
-       /* LoginDataset loginDataset= ((LoginDataset) responce);
-        if(loginDataset.getStatus().equalsIgnoreCase("false"))
-        CommonHelper.showErrorAlertDiaolog(mContext, "Login Failure", loginDataset.getMessage());
+        LoginDataset loginDataset= ((LoginDataset) responce);
+        if(loginDataset.getIsResponseSuccess()==false)
+        CommonHelper.showErrorAlertDiaolog(mContext, "Login Failure", loginDataset.getResponseMsg());
         else
-        afterloginnavigation();*/
+        afterloginnavigation();
     }
 
     @Override
