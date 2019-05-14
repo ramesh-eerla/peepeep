@@ -13,6 +13,7 @@ import com.peepeep.transport.fragments.LoginFragment;
 import com.peepeep.transport.fragments.RegisterFragment;
 import com.peepeep.transport.fragments.TrackFragment;
 import com.peepeep.transport.uicomponents.SuperTabActivity;
+import com.peepeep.transport.utils.Constants;
 
 import java.util.ArrayList;
 
@@ -31,8 +32,8 @@ public class MyTrips_Activity extends SuperTabActivity implements TrackFragment.
         super.onCreate(savedInstanceState);
         mFragment=new ArrayList<>();
         mFragment_name=new ArrayList<>();
-        mFragment.add(TrackFragment.newInstance("Current",1));
-        mFragment.add(TrackFragment.newInstance("Past",2));
+        mFragment.add(TrackFragment.newInstance("Current", Constants.CURRENT));
+        mFragment.add(TrackFragment.newInstance("Past",Constants.PAST));
         mFragment_name.add("Curent");
         mFragment_name.add("Past");
 
@@ -48,6 +49,16 @@ public class MyTrips_Activity extends SuperTabActivity implements TrackFragment.
     @Override
     public boolean getTitleVisible() {
         return true;
+    }
+
+    @Override
+    public boolean getTextTitleVisible() {
+        return true;
+    }
+
+    @Override
+    public String getTitleText() {
+        return "My Trips";
     }
 
 

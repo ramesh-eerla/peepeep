@@ -12,6 +12,7 @@ import com.peepeep.transport.R;
 import com.peepeep.transport.controller.AppController;
 import com.peepeep.transport.interfaces.PPRequestInterface;
 import com.peepeep.transport.interfaces.ResponceCallback;
+import com.peepeep.transport.servicerequest.responsemodels.ForgetPassword;
 import com.peepeep.transport.servicerequest.responsemodels.LoginDataset;
 import com.peepeep.transport.servicerequest.responsemodels.RegistrationDataset;
 import com.peepeep.transport.servicerequest.responsemodels.RetrofitErrorResponse;
@@ -43,7 +44,7 @@ public class PP_RetrofitSevicecall {
     public Call<LoginDataset> mService_login;
 
      public Call<RetrofitResponse> mService_submit;*/
-   // ProgressDialog mProgressDialog;
+    ProgressDialog mProgressDialog;
     CommonHelper mCommonHelper;
     ResponceCallback mResponceCallback;
 
@@ -61,9 +62,8 @@ public class PP_RetrofitSevicecall {
 
     public void loginpost(final int requestType,String muserName,String mpassword) {
 
-        /*if (mCommonHelper!=null&& mContext != null)
+        if (mCommonHelper!=null&& mContext != null)
             mProgressDialog = mCommonHelper.showDialog(mContext);
-*/
         PPRequestInterface mApiService = AppController.getInterfaceService(mContext);
         Call<LoginDataset>  mService= mApiService.user_login(mContext.getString(R.string.login_url),  muserName,mpassword);
 
@@ -71,7 +71,7 @@ public class PP_RetrofitSevicecall {
 
             @Override
             public void onResponse(Call<LoginDataset> call, Response<LoginDataset> response) {
-               // mProgressDialog.dismiss();
+                mProgressDialog.dismiss();
                 if (response.isSuccessful()) {
                     SharedPreferences mPrefs = mContext.getSharedPreferences("Login_repsonse",mContext.MODE_PRIVATE);
                      SharedPreferences.Editor prefsEditor = mPrefs.edit();
@@ -100,7 +100,53 @@ public class PP_RetrofitSevicecall {
 
             @Override
             public void onFailure(Call<LoginDataset> call, Throwable t) {
-                //mProgressDialog.dismiss();
+                mProgressDialog.dismiss();
+                call.cancel();
+                if(t instanceof SocketTimeoutException)
+                    CommonHelper.showErrorAlertDiaolog(mContext, "Connection Timeout", Constants.PP_CONECTIONTIMEOUT_Error_Message);
+                else if(t instanceof UnknownHostException)
+                    CommonHelper.showErrorAlertDiaolog(mContext, "UnknownHost", t.getMessage());
+                else
+                    CommonHelper.showErrorAlertDiaolog(mContext, "No Network", Constants.PP_NONETWORK_Error_Message);
+            }
+        });
+    }
+    public void forget_Password(final int requestType,String muserName) {
+
+        if (mCommonHelper!=null&& mContext != null)
+            mProgressDialog = mCommonHelper.showDialog(mContext);
+        PPRequestInterface mApiService = AppController.getInterfaceService(mContext);
+        Call<ForgetPassword>  mService= mApiService.user_forgetPassword(mContext.getString(R.string.forget_password),  muserName);
+
+        mService.enqueue(new Callback<ForgetPassword>() {
+
+            @Override
+            public void onResponse(Call<ForgetPassword> call, Response<ForgetPassword> response) {
+                  mProgressDialog.dismiss();
+                if (response.isSuccessful()) {
+
+                    mResponceCallback.callback(response.body(), requestType);
+
+                } else{
+                    JsonParser parser = new JsonParser();
+                    JsonElement mJson = null;
+                    try {
+                        mJson = parser.parse(response.errorBody().string());
+                        Gson gson = new Gson();
+                        RetrofitErrorResponse errorResponse = gson.fromJson(mJson, RetrofitErrorResponse.class);
+                        String error_message = errorResponse.getMessage();
+                        CommonHelper.showErrorAlertDiaolog(mContext, "Login Failure", error_message);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(Call<ForgetPassword> call, Throwable t) {
+                mProgressDialog.dismiss();
                 call.cancel();
                 if(t instanceof SocketTimeoutException)
                     CommonHelper.showErrorAlertDiaolog(mContext, "Connection Timeout", Constants.PP_CONECTIONTIMEOUT_Error_Message);
@@ -114,13 +160,14 @@ public class PP_RetrofitSevicecall {
 
     public void Registration_post(Call<RegistrationDataset> mService, Object mUploadResumeFile) {
 
-
+        if (mCommonHelper!=null&& mContext != null)
+            mProgressDialog = mCommonHelper.showDialog(mContext);
 
         mService.enqueue(new Callback<RegistrationDataset>() {
             @Override
             public void onResponse(Call<RegistrationDataset> call, Response<RegistrationDataset> response) {
-               /* if(requestType!=Constants.RT_SEARCH_LOCATION)
-                    mProgressDialog.dismiss();*/
+
+                    mProgressDialog.dismiss();
                 if (response.isSuccessful()) {
 
                     try {
@@ -142,8 +189,8 @@ public class PP_RetrofitSevicecall {
 
             @Override
             public void onFailure(Call<RegistrationDataset> call, Throwable t) {
-              /*  if(requestType!=Constants.PP_SEARCH_LOCATION) {
-                    mProgressDialog.dismiss();*/
+
+                    mProgressDialog.dismiss();
                     call.cancel();
                     if (t instanceof SocketTimeoutException)
                         CommonHelper.showErrorAlertDiaolog(mContext, "Connection Timeout", Constants.PP_CONECTIONTIMEOUT_Error_Message);

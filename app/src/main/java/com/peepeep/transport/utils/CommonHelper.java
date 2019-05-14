@@ -3,21 +3,27 @@ package com.peepeep.transport.utils;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.text.Html;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.gson.Gson;
 import com.peepeep.transport.R;
+import com.peepeep.transport.servicerequest.responsemodels.LoginDataset;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class CommonHelper {
     private ProgressDialog dialog = null;
@@ -93,6 +99,16 @@ public class CommonHelper {
             return "";
         }
         return "" + date;
+    }
+
+
+    public ProgressDialog showDialog(Context context) {
+        dialog = new CustomProgressDialog(context).showProgressDialog("", "Loading ..");
+        if (dialog != null)
+            dialog.setCanceledOnTouchOutside(false);
+
+
+        return dialog;
     }
 
     /*
@@ -266,5 +282,31 @@ public class CommonHelper {
                 break;
         }
         return sMonth;
+    }
+
+    public static LoginDataset getLoginDataset(Context mContext){
+        LoginDataset mLoginDataset;
+        SharedPreferences mPrefs = mContext.getSharedPreferences("Login_repsonse",mContext.MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = mPrefs.getString("MyObject", "");
+        mLoginDataset = gson.fromJson(json, LoginDataset.class);
+        return mLoginDataset;
+    }
+
+    public static ArrayList<String> getString(List<LoginDataset.Good> listdata){
+        ArrayList<String> data= new ArrayList<>();
+
+           // LoginDataset.Good listdata=(LoginDataset.Good)object;
+            for (int i=0;i<listdata.size();i++){
+                data.add(listdata.get(i).getGoodsName());
+            }
+
+
+        return data;
+    }
+    public static ArrayAdapter getdefaultAdapter(Context mContext,ArrayList<String> list_data){
+        ArrayAdapter adapter = new ArrayAdapter<String>(mContext,
+                android.R.layout.simple_list_item_1, list_data);
+        return adapter;
     }
 }

@@ -76,8 +76,8 @@ public class LoginDataset {
         this.goods = goods;
     }
 
-}
- class Good {
+
+ public class Good {
 
     @SerializedName("GoodsId")
     @Expose
@@ -104,7 +104,7 @@ public class LoginDataset {
 
 }
 
- class Profile {
+ public class Profile {
 
     @SerializedName("FirstName")
     @Expose
@@ -283,4 +283,5 @@ public class LoginDataset {
         this.isBusinessUser = isBusinessUser;
     }
 
+}
 }

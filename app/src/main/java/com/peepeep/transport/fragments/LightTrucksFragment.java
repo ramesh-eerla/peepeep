@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -24,6 +25,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatCheckBox;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.fragment.app.Fragment;
 import androidx.slidingpanelayout.widget.SlidingPaneLayout;
@@ -33,12 +35,15 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.peepeep.transport.R;
 import com.peepeep.transport.acitivities.BookingActivity;
 import com.peepeep.transport.acitivities.InvoiceActivity;
+import com.peepeep.transport.servicerequest.responsemodels.LoginDataset;
 import com.peepeep.transport.uicomponents.PpEditText;
 import com.peepeep.transport.utils.CommonHelper;
 import com.peepeep.transport.utils.DateAndTimePickerUtils;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
+import afu.org.checkerframework.checker.units.qual.C;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -93,7 +98,7 @@ public class LightTrucksFragment extends Fragment implements View.OnClickListene
     @BindView(R.id.select_vehicle_type_lable)
     AppCompatTextView mSelectvehicleLable;
     @BindView(R.id.material_type_edit)
-    AutoCompleteTextView mMaterialedit;
+    AppCompatSpinner mMaterialedit;
     @BindView(R.id.material_type_lable)
     AppCompatTextView mMateriallabel;
 
@@ -141,7 +146,7 @@ public class LightTrucksFragment extends Fragment implements View.OnClickListene
     @BindView(R.id.labour_count_layout)
     LinearLayout mlabourcountlayout;
 
-
+    ArrayList<String> mMeterial_type;
    /* @BindView(R.id.sliding_panel)
     SlidingPaneLayout mSlidingpanel;*/
 
@@ -151,6 +156,7 @@ public class LightTrucksFragment extends Fragment implements View.OnClickListene
     private Context mContext;
     private int mYear, mMonth, mDay, mHour, mMinute;
     private boolean pickflag=false,dropflag=false;
+    private LoginDataset mLoginDataset;
 
     public LightTrucksFragment() {
         // Required empty public constructor
@@ -189,6 +195,8 @@ public class LightTrucksFragment extends Fragment implements View.OnClickListene
         View view = inflater.inflate(R.layout.content_landingpage, container, false);
         ButterKnife.bind(this, view);
         mContext=getActivity();
+        mLoginDataset =CommonHelper.getLoginDataset(mContext);
+        mMeterial_type= CommonHelper.getString(mLoginDataset.getGoods());
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH);
@@ -229,6 +237,13 @@ public class LightTrucksFragment extends Fragment implements View.OnClickListene
 
                     }
                 }, mHour, mMinute, false);
+
+
+
+
+
+        mMaterialedit.setAdapter(CommonHelper.getdefaultAdapter(mContext,mMeterial_type));
+mMaterialedit.setSelection(0);
         mBookVehicleButton.setOnClickListener(this);
         mDecresseButton.setOnClickListener(this);
         mIncresse_button.setOnClickListener(this);

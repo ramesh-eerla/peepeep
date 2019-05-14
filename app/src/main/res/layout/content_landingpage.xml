@@ -298,7 +298,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/edittextboxheight"
             android:background="@drawable/selet_edittext"
-            android:paddingLeft="@dimen/dim_6"
+            android:paddingLeft="@dimen/dim_16"
             android:textSize="@dimen/regularfont"
             android:id="@+id/material_weight_edit"
             android:drawableRight="@drawable/ic_down_arrow"
@@ -312,16 +312,33 @@
             android:textSize="@dimen/regularfont"
             android:id="@+id/material_type_lable"
             android:text="Material Type:"/>
-        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/edittextboxheight"
-            android:background="@drawable/selet_edittext"
-            android:paddingLeft="@dimen/dim_6"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="2"
+            android:paddingLeft="@dimen/dim_16"
+            android:paddingRight="@dimen/dim_10"
+            android:background="@drawable/selet_edittext">
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:background="@android:color/transparent"
             android:textSize="@dimen/regularfont"
             android:id="@+id/material_type_edit"
-            android:drawableRight="@drawable/ic_down_arrow"
-            android:paddingRight="@dimen/dim_10"
+
             />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:layout_weight="1.5"
+                android:backgroundTint="@android:color/transparent"
+            android:drawableEnd="@drawable/ic_down_arrow"/>
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

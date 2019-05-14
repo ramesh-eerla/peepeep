@@ -1,6 +1,7 @@
 package com.peepeep.transport.interfaces;
 
 
+import com.peepeep.transport.servicerequest.responsemodels.ForgetPassword;
 import com.peepeep.transport.servicerequest.responsemodels.LoginDataset;
 import com.peepeep.transport.servicerequest.responsemodels.RegistrationDataset;
 import com.peepeep.transport.servicerequest.retrofitrequestparams.Retrofit_RequestParams;
@@ -31,6 +32,9 @@ public interface PPRequestInterface {
 
    @POST("{methodname}")
     Call<LoginDataset> user_login(@Path("methodname") String methodname, @Query("userName") String userName,@Query("password") String password);
+
+    @POST("{methodname}")
+    Call<ForgetPassword> user_forgetPassword(@Path("methodname") String methodname, @Query("userName") String userName);
 
     @POST("{methodname}")
     Call<RegistrationDataset> peeppRegistration(@Path("methodname") String methodname, @Body Retrofit_RequestParams.RegistrationParams task);

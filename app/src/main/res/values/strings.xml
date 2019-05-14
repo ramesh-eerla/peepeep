@@ -17,6 +17,7 @@
     <string name="base_url">http://13.127.133.133/api</string>
     <string name="login_url">api/mobileregistration/UserLogin</string>
     <string name="regist_url">api/mobileregistration/mobileregistration</string>
+    <string name="forget_password">api/mobileregistration/forgetpassword</string>
     <string name="facebook">Facebook</string>
     <string name="google">Google</string>
     <string name="business_name">Business Name</string>

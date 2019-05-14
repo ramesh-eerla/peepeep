@@ -31,8 +31,8 @@ public class Constants {
     public static final int PP_TOKEN = 504;
     public static final int PP_RELOADLOGIN = 1;
     public static final int PP_LOGIN = 400;
-    public static final int PP_SEARCH = 401;
-    public static final int PP_SEARCH_HOSTEL = 402;
+    public static final int PP_REGISTER = 401;
+    public static final int PP_FORGET_PASSWORD = 402;
     public static final int PP_SEARCH_LOCATION = 403;
     public static final int PP_COUNTRIES = 404;
     public static final int PP_STATE = 405;
@@ -71,9 +71,9 @@ public class Constants {
     public static String PP_TOKEN_Error_Message = "Please enter token";
 
 
-    public static final int HOME = 300;
-    public static final int MESSAGE = 301;
-    public static final int VIEWMESSAGE = 302;
+    public static final int CURRENT = 300;
+    public static final int PAST = 301;
+    public static final int COUPANS = 302;
     public static final int SENTMESSAGES = 303;
     public static final int FAVOURITES = 304;
     public static final int BOOKMARKS = 305;

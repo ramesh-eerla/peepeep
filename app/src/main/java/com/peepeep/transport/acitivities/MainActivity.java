@@ -49,6 +49,16 @@ public class MainActivity extends SuperTabActivity {
         return false;
     }
 
+    @Override
+    public boolean getTextTitleVisible() {
+        return false;
+    }
+
+    @Override
+    public String getTitleText() {
+        return "";
+    }
+
 
     @Override
     public boolean getDisplayShowTitleEnabled() {

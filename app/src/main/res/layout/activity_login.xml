@@ -39,7 +39,17 @@
                 android:layout_gravity="center"
                app:srcCompat="@drawable/ic_logo_shape"
                 android:visibility="visible" />
-
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tool_text_title"
+                android:visibility="gone"
+                android:fontFamily="@font/avenir"
+                android:textColor="#d9ffffff"
+                android:textSize="@dimen/screen_heading"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:text="Coupons"/>
         </androidx.appcompat.widget.Toolbar>
 
         <com.google.android.material.tabs.TabLayout

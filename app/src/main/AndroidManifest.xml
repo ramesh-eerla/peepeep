@@ -45,6 +45,9 @@
             android:name=".acitivities.MyTrips_Activity"
             android:parentActivityName=".acitivities.Landingpage" />
         <activity
+            android:name=".acitivities.MyCoupansAcitivity"
+            android:parentActivityName=".acitivities.Landingpage" />
+        <activity
             android:name=".acitivities.Landingpage"
             android:label="@string/title_activity_landingpage" />
         <activity

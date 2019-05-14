@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.peepeep.transport.R;
 import com.peepeep.transport.interfaces.OnActionItemClickListener;
+import com.peepeep.transport.utils.Constants;
 
 import java.util.ArrayList;
 
@@ -79,14 +80,40 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         @BindView(R.id.foot_linearlayout)
         LinearLayout mFooterLayout;
 
+        @BindView(R.id.trip_item)
+        LinearLayout mTrip_Item;
+        @BindView(R.id.coupans_item)
+        LinearLayout mCoupans_Item;
+
+        @BindView(R.id.coupan_value)
+        AppCompatTextView mCoupan_value;
+        @BindView(R.id.coupa_use)
+        AppCompatTextView mCoupan_use;
+        @BindView(R.id.coupan_content)
+        AppCompatTextView mCoupan_content;
+        @BindView(R.id.coupan_valid)
+        AppCompatTextView mCoupan_valid;
+
         public RecyclerViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
             mSubmit.setOnClickListener(this);
             mCancel.setOnClickListener(this);
             itemView.setOnClickListener(this);
-            if(screen_type==2)
-                mFooterLayout.setVisibility(View.GONE);
+            switch (screen_type){
+                case Constants.CURRENT:
+                    mFooterLayout.setVisibility(View.VISIBLE);
+                    break;
+                case Constants.PAST:
+                    mFooterLayout.setVisibility(View.GONE);
+                    break;
+                case Constants.COUPANS:
+                    mTrip_Item.setVisibility(View.GONE);
+                    mCoupans_Item.setVisibility(View.VISIBLE);
+                    break;
+            }
+
+
 
         }
 

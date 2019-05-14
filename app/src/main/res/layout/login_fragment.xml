@@ -131,8 +131,50 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.70" />
+            app:layout_constraintVertical_bias="0.75" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="@dimen/dim_15"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.60">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_1"
+                android:layout_weight="0.5"
+                android:layout_marginRight="@dimen/dim_15"
+                android:background="@android:color/darker_gray"
 
+
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/avenir"
+                android:layout_weight="1.3"
+                android:gravity="center"
+                android:textSize="@dimen/screen_title"
+                android:textStyle="bold"
+                android:textColor="@color/dark_blue"
+                android:id="@+id/select_vehicle_type_lable"
+                android:text="OR"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_1"
+                android:layout_weight="0.5"
+                android:layout_marginLeft="@dimen/dim_15"
+                android:background="@android:color/darker_gray"
+                />
+        </LinearLayout>
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/gmaillogin"
             android:layout_width="@dimen/dim_100"
@@ -149,7 +191,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.70" />
+            app:layout_constraintVertical_bias="0.75" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <!--<FrameLayout

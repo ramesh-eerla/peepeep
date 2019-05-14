@@ -30,6 +30,8 @@ public abstract class SuperTabActivity extends AppCompatActivity {
     LinearLayout mLogin_image_layout;
     @BindView(R.id.toolbar_title)
     AppCompatImageView mToolbar_title;
+    @BindView(R.id.tool_text_title)
+    AppCompatTextView mTitle_text;
 
 
 
@@ -52,7 +54,15 @@ public abstract class SuperTabActivity extends AppCompatActivity {
             mToolbar_title.setVisibility(View.GONE);
             mLogin_image_layout.setVisibility(View.VISIBLE);
         }
+if(getTextTitleVisible()){
+    mTitle_text.setVisibility(View.VISIBLE);
+    mToolbar_title.setVisibility(View.GONE);
+}else{
+    mToolbar_title.setVisibility(View.VISIBLE);
+    mTitle_text.setVisibility(View.GONE);
+}
 
+mTitle_text.setText(getTitleText());
     }
 
     public void setupViewPager(ViewPager viewPager, ArrayList<Fragment> mFragment, ArrayList<String> mFragment_name) {
@@ -64,6 +74,9 @@ public abstract class SuperTabActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
     }
     public abstract boolean getTitleVisible();
+
+    public abstract boolean getTextTitleVisible();
+    public abstract String getTitleText();
 
     public abstract boolean getDisplayShowTitleEnabled();
 
